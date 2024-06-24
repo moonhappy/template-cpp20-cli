@@ -37,21 +37,23 @@ add_executable(template_cpp ${all_SRCS})
 
 
 ########################################
-# Fetch GoogleTest for unit tests
+# Fetch GoogleTest for unit tests, pre-built
 ########################################
-include(FetchContent)
-FetchContent_Declare(
-    googletest
-    URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
-)
-# - For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+# include(FetchContent)
+# FetchContent_Declare(
+#     googletest
+#     URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+# )
+# # - For Windows: Prevent overriding the parent project's compiler/linker settings
+# set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+# FetchContent_MakeAvailable(googletest)
 
 ########################################
 # Declare unit test target (GoogleTest)
 ########################################
 enable_testing()
+include(GoogleTest)
+add_subdirectory("${PROJECT_SOURCE_DIR}/lib/googletest")
 file(GLOB test_SRCS
     "${PROJECT_SOURCE_DIR}/include/*.hpp"
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
@@ -63,5 +65,5 @@ add_executable(template_test ${test_SRCS})
 
 target_link_libraries(template_test GTest::gtest_main)
 
-include(GoogleTest)
+
 gtest_discover_tests(template_test)
