@@ -12,8 +12,6 @@
 #include <sstream>
 #include "hello.hpp"
 
-consteval int add(int a, int b) { return a+b; }
-constexpr int r = add(100, 300);
 
 std::string hello_world() {
     std::ostringstream ss;
