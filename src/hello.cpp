@@ -9,17 +9,14 @@
 // https://github.com/facebook/buck2/tree/main/examples/hello_world
 // Copyright (c) Meta Platforms, Inc. and affiliates.
 
-#include <iostream>
-
-#ifdef _WIN32
-#define DLLEXPORT __declspec(dllexport)
-#else
-#define DLLEXPORT
-#endif
+#include <sstream>
+#include "hello.hpp"
 
 consteval int add(int a, int b) { return a+b; }
 constexpr int r = add(100, 300);
 
-DLLEXPORT void hello_world() {
-    std::cout << "Hello, World! r = " << r << std::endl;
+std::string hello_world() {
+    std::ostringstream ss;
+    ss << "Hello, World! r = " << r;
+    return ss.str();
 }

@@ -60,7 +60,7 @@ cxx_library(
 cxx_binary(
     name = "template_cpp",
     compiler_flags = ["-std=c++20"],
-    include_directories = ["include"],
+    include_directories = ["include", "lib/CLI11/include/"],
     headers = glob(["*.hpp"]),
     srcs = glob(["src/*.cpp"]),
     link_style = "static",

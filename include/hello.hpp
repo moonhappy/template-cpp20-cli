@@ -5,8 +5,6 @@
 // This code is licensed under MIT license (see LICENSE for details)
 //
 
-// ATTRIBUTION: 
-// https://github.com/facebook/buck2/tree/main/examples/hello_world
-// Copyright (c) Meta Platforms, Inc. and affiliates.
+#include <string>
 
-void hello_world();
+std::string hello_world();

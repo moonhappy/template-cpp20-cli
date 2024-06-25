@@ -23,6 +23,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
     ${PROJECT_SOURCE_DIR}/src
+    ${PROJECT_SOURCE_DIR}/lib/CLI11/include
 )
 file(GLOB all_SRCS
     "${PROJECT_SOURCE_DIR}/include/*.hpp"
