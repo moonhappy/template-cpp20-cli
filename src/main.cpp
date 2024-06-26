@@ -1,15 +1,15 @@
 //
 // C++20 CLI Template
-// Copyright (c) Moon Happy / Phillip Cooper.
+// Copyright (c) Phillip Cooper | https://moonhappy.io
 //
 // This code is licensed under MIT license (see LICENSE for details)
 //
 
-// #include <iostream>
 #include <CLI/CLI.hpp>
-#include "hello.hpp"
+#include "hello/hello.hpp"
 
-int main(int argc, char * argv[]) {
+
+int main(int argc, char **argv) {
     CLI::App app{"App description"};
     argv = app.ensure_utf8(argv);
 
