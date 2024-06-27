@@ -8,6 +8,11 @@
 #include <CLI/CLI.hpp>
 #include "hello/hello.hpp"
 
+// Check that the compiler is C++20 or later.
+#if __cplusplus < 202002L
+static_assert(false, "This code requires C++20 or later.");
+#endif
+
 
 int main(int argc, char **argv) {
     CLI::App app{"App description"};
